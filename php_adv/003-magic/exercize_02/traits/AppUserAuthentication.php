@@ -11,7 +11,7 @@ private int $password = 5678;
 public function authenticate($login, $password): string | bool
 {
     if($this->login === $login && $this->password === $password){
-       return "$login авторизован как пользователь приложения";
+       return "пользователь с логином: '$login' авторизован как пользователь приложения";
     }else {
         return false;
     }

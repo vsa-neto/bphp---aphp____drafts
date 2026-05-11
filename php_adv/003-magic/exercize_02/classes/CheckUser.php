@@ -11,18 +11,19 @@ class CheckUser {
         MobileUserAuthentication::authenticate as mAuthenticate;
     }
 
-    // Метод, который проверяет оба способа авторизации
+    // Метод авторизации
     public function login($login, $password) {
+
         echo "Попытка входа с логином: $login\n";
         
-        // Пробуем веб-авторизацию
+        // авторизация для App.
         $result = $this->authenticate($login, $password);
         if ($result) return $result;
 
-        // Пробуем мобильную авторизацию
+        // авторизация для Mob.
         $result = $this->mAuthenticate($login, $password);
         if ($result) return $result;
 
-        return "Авторизация не удалась: Неверные данные.";
+        return "Авторизация не удалась: Неверный логин или пароль";
     }
 }

@@ -12,7 +12,7 @@ private int $mPassword = 1234;
 public function authenticate(string $login, int $password): string | bool
 {
     if($this->mLogin === $login && $this->mPassword === $password){
-       return "$login авторизован как пользователь мобильного приложения";
+       return "пользователь с логином: '$login' авторизован как пользователь мобильного приложения";
     }else {
         return false;
     }
